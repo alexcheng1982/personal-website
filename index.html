@@ -1,0 +1,79 @@
+---
+layout: page
+title: Midgets standing on the toes of others
+---
+{% include JB/setup %}
+
+<h2>Recent Articles</h2>
+
+<ul class="posts index_posts">
+  {% for post in paginator.posts %}
+    <li><h3><a class="tit" href="{{ BASE_PATH }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3> -- <span class="post-sub">{{ post.date | date_to_string }}</span>
+        <p class="abstract">{{ post.content | strip_html | truncatewords: 50 }}</p>
+        <p class="more"><a href="{{ BASE_PATH }}{{ post.url }}"  target="_blank" title="Read more...">Read more...</a></p>
+    </li>
+  {% endfor %}
+</ul>
+
+<div id="post-pagination" class="pagination pagination-large pagination-centered">
+	  <ul>
+  {% if paginator.previous_page %}
+    <li>
+      {% if paginator.previous_page == 1 %}
+        <a href="/">Previous</a>
+      {% else %}
+        <a href="/page{{paginator.previous_page}}">Previous</a>
+      {% endif %}
+    </li>
+  {% else %}
+    <li class="disabled">
+      <a href="#">Previous</a>
+    </li>
+  {% endif %}
+
+      {% if paginator.page == 1 %}
+      	<li class="active">
+        	<a href="/">1</a>
+         </li>		
+      {% else %}
+        <li>
+        	<a href="/">1</a>
+        </li>
+      {% endif %}
+    
+    {% for count in (2..paginator.total_pages) %}
+        {% if count == paginator.page %}
+        	<li class="active">
+          		<a href="/page{{count}}">{{count}}</a>
+          	</li>	
+        {% else %}
+        	<li>
+          		<a href="/page{{count}}">{{count}}</a>
+          	</li>
+        {% endif %}
+    {% endfor %}
+
+  {% if paginator.next_page %}
+    <li>
+      <a href="/page{{paginator.next_page}}">Next</a>
+    </li>
+  {% else %}
+    <li class="disabled">
+      <a href="#">Next</a>
+    </li>
+  {% endif %}
+
+   </ul>
+
+</div>
+
+
+<h2>Tag Cloud</h2>
+
+<ul class="tag_box inline">
+  {% assign tags_list = site.tags %}
+  {% include JB/tags_list %}
+</ul>
+
+
+
