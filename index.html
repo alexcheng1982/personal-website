@@ -7,7 +7,7 @@ title: Midgets standing on the toes of others
 
 <ul class="posts index_posts">
   {% for post in paginator.posts %}
-    <li><h3><a class="tit" href="{{ BASE_PATH }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3> -- <span class="post-sub">{{ post.date | date_to_string }}</span>
+    <li><h3><a class="tit" href="{{ BASE_PATH }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3><span class="label">{{ post.date | date_to_string }}</span>
         <p class="abstract">{{ post.content | strip_html | truncatewords: 50 }}</p>
         <p class="more"><a href="{{ BASE_PATH }}{{ post.url }}"  target="_blank" title="Read more...">Read more...</a></p>
     </li>

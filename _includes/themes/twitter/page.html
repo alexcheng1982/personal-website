@@ -3,9 +3,30 @@
 </div>
 
 <div class="row">
-  <div class="span8">
+  <div class="span9">
     {{ content }}
   </div>
-  <div class="span4">
+  <div class="span3">
+    <div class="row">
+       <h3>Tags</h3>
+       <ul class="tag_box inline">
+          {% assign tags_list = site.tags %}  
+          {% include JB/tags_list %}
+      </ul>
+    </div> 
+    <div class="row">
+      <h3>Profile</h3>
+      <div>
+        <a href="http://stackoverflow.com/users/221847/alex-cheng">
+<img src="http://stackoverflow.com/users/flair/221847.png" width="208" height="58" alt="profile for Alex Cheng at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Alex Cheng at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+</a>
+    </div>
+    <div>
+        <a href="http://nz.linkedin.com/in/chengfu">
+          <img src="http://www.linkedin.com/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="View Fu Cheng's profile on LinkedIn">
+    </a>
+    </div>  
+    </div>  
+     
   </div>
 </div>

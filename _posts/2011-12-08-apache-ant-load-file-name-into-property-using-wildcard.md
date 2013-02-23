@@ -2,7 +2,7 @@
 layout: post
 category: Tech
 tags: ['Ant']
-title: Load file name into property using wildcard
+title: Apache Ant - Load file name into property using wildcard
 created: 1323264582
 ---
 
